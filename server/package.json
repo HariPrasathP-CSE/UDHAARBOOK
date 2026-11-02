@@ -1,0 +1,53 @@
+{
+  "name": "udhaarbook-server",
+  "version": "1.0.0",
+  "description": "UdhaarBook Backend API - Two-party credit ledger for small shops",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "db": "node src/scripts/runLocalMongo.js",
+    "seed": "node src/scripts/seed.js",
+    "test": "node tests/verify-auth.js && node tests/verify-phase2.js && node tests/verify-phase3.js && node tests/verify-phase4.js && node tests/verify-phase5.js && node tests/verify-phase6.js && node tests/verify-phase7.js && node tests/verify-seed.js",
+    "test:jest": "jest --runInBand --detectOpenHandles --forceExit",
+    "test:phase1": "node tests/verify-auth.js",
+    "test:phase2": "node tests/verify-phase2.js",
+    "test:phase3": "node tests/verify-phase3.js",
+    "test:phase4": "node tests/verify-phase4.js",
+    "test:phase5": "node tests/verify-phase5.js",
+    "test:phase6": "node tests/verify-phase6.js",
+    "test:phase7": "node tests/verify-phase7.js",
+    "test:seed": "node tests/verify-seed.js",
+    "test:all": "npm test && npm run test:jest"
+  },
+  "keywords": [
+    "udhaarbook",
+    "credit-ledger",
+    "express",
+    "mongoose",
+    "jwt"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.7.2",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^10.3.1",
+    "pdfkit": "^0.20.2"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "mongodb-memory-server": "^11.3.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.3.1"
+  }
+}

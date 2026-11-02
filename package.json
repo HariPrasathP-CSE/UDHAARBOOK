@@ -1,0 +1,14 @@
+{
+  "name": "udhaarbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UdhaarBook - Two-party credit ledger for small shops",
+  "scripts": {
+    "server": "npm --prefix server run dev",
+    "server:start": "npm --prefix server start",
+    "client": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build",
+    "test:server": "npm --prefix server test"
+  }
+}
+
