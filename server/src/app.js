@@ -16,19 +16,17 @@ app.use(
   })
 );
 
-// Enable CORS with secure configuration
-const allowedOrigins = process.env.CLIENT_URL
-  ? [process.env.CLIENT_URL, 'http://localhost:5173', 'http://127.0.0.1:5173']
-  : true;
-
+// Enable CORS for all incoming client origins (Vercel, localhost, previews)
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: true, // Reflects the request origin, allowing all origins with credentials enabled
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    optionsSuccessStatus: 200
   })
 );
+app.options('*', cors());
 
 // Rate limiter on auth routes (skipped in test mode)
 const authLimiter = rateLimit({
