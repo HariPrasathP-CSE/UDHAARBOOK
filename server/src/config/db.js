@@ -5,6 +5,11 @@ const fs = require('fs');
 let embeddedMongoInstance = null;
 
 const connectDB = async () => {
+  // Reuse existing connection in serverless environments (Vercel)
+  if (mongoose.connection && mongoose.connection.readyState >= 1) {
+    return mongoose.connection;
+  }
+
   const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/udhaarbook';
 
   try {
