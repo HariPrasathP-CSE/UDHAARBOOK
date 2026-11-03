@@ -76,9 +76,9 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <span className="nav-link text-white-50">
+                      <Link className="nav-link" to="/shopkeeper/dashboard#customers">
                         <i className="bi bi-journal-text me-1"></i> Credit Ledger
-                      </span>
+                      </Link>
                     </li>
                   </>
                 )}
@@ -90,9 +90,9 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <span className="nav-link text-white-50">
+                      <Link className="nav-link" to="/customer/dashboard">
                         <i className="bi bi-wallet2 me-1"></i> My Khata
-                      </span>
+                      </Link>
                     </li>
                   </>
                 )}
